@@ -11,7 +11,11 @@
     <title>php-ajax-dischi</title>
   </head>
   <body>
-   
+   <?php
+    include __DIR__ . '/db.php';
+    $dischi = $dischi['response'];
+
+   ?>
     <header class="d-flex gap-5">
 
         <figure class="d-flex align-items-center m-0 ps-2">
@@ -20,6 +24,36 @@
         </figure>
 
     </header>
+    
+    <main>
+
+        <div class="container py-5 px-auto">
+                
+                <div class="row row-cols-2 row-cols-lg-5  gy-1">
+                    <?php
+                    foreach($dischi as $disk){
+    
+                    ?>
+    
+                    <div class="col p-2">
+                        <div class="card align-items-center gap-3 py-3 text-center card_bg" >
+                            <img src="<?= $disk['poster']?>" class="card-img-top card_img" alt="">
+                            <div class="card-body text-white">
+                                <h5 class="card-title title"><?= $disk['title']?></h5>
+                                <p class="card-text author"><?= $disk['author']?></p>
+                                <p class="card-text year"><?= $disk['year']?></p>
+    
+    
+                            </div>
+                        </div>
+                    </div>
+    
+                    <?php
+                    }
+                    ?>
+                </div>
+        </div>
+    </main>
     
 
 
