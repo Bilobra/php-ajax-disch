@@ -16,6 +16,7 @@
     $dischi = $dischi['response'];
 
    ?>
+   
     <header class="d-flex gap-5">
 
         <figure class="d-flex align-items-center m-0 ps-2">

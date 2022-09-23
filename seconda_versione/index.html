@@ -8,12 +8,39 @@
     <script src='https://cdn.jsdelivr.net/npm/vue@2.7.8/dist/vue.js'></script>
     <!-- AXIOS -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js'></script>
+
+    <link rel="stylesheet" href="./style2.css">
+
     <title>php-ajax-dischi</title>
 </head>
 <body>
 
     <div id="app">
-        <h1>ciao</h1>
+        <header class="main_header">
+            <figure>
+                <img src="./img/logo-small.svg" alt="">
+            </figure>
+        </header>
+
+        <main>
+            <div class="container">
+                <ul class="card_wrapper">
+                    <li class="card" v-for="disk in dischi">
+                        <figure class="card_img">
+                            <img :src="disk.poster" :alt="disk.title">
+                        </figure>
+                        <div class="body_card">
+                            <h5>{{disk.title}}</h5>
+                            <p>{{disk.author}}</p>
+                            <p>{{disk.year}}</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        
+
+
     </div>
     
     <script src="./main.js"></script>
